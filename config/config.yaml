@@ -1,0 +1,32 @@
+# RAG System Configuration
+
+# Model Settings
+model:
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+  generation_model: "gpt-3.5-turbo"
+  max_tokens: 1024
+  temperature: 0.7
+
+# Vector Store Settings
+vector_store:
+  type: "chroma"
+  persist_directory: "./data/embeddings"
+  collection_name: "documents"
+  similarity_threshold: 0.7
+
+# Retrieval Settings
+retrieval:
+  top_k: 5
+  chunk_size: 1000
+  chunk_overlap: 200
+
+# API Settings
+api:
+  host: "0.0.0.0"
+  port: 8000
+  debug: false
+
+# Logging Settings
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
